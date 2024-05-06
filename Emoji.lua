@@ -1,17 +1,17 @@
 local EgoId = {
-    [0] = true,
+	[0] = true,
 }
 
 local fedId = {
-    [0] = true,
+	[0] = true,
 }
 
 local ThugId = {
-    [0] = true,
+	[0] = true,
 }
 
 local StarId = {
-    [0] = true,
+	[0] = true,
 }
 
 local SkidId = {
@@ -19,52 +19,103 @@ local SkidId = {
 }
 
 local OwnerId = {
-    [4613474292] = true,
+	[4613474292] = true,
 }
 
 local EnemyId = {
-    [0] = true,
-}
+	[0] = true,
+} 
 
-local displayNamePrefixes = {
-    [StarId] = "[⭐]",
-    [SkidId] = "[💀SKID💀]",
-    [ThugId] = "[😎THUGHUNTER😎]",
-    [EgoId] = "[🔥child molester🔥]",
-    [fedId] = "[⚧fed⚧]",
-    [OwnerId] = "[👑]",
-    [EnemyId] = "🤡 RAYX Premium User 🤡",
-}
-
-function updateDisplayName(player)
-    local userId = player.UserId
-    local displayNamePrefix = displayNamePrefixes[userId]
-
-    if displayNamePrefix then
-        local character = player.Character
-        if character and character.Parent.Name == 'Players' then
-            local humanoid = character:FindFirstChildWhichIsA('Humanoid')
-            if humanoid then
-                humanoid.DisplayName = displayNamePrefix .. player.DisplayName
-            end
-        end
-    end
+function premium()
+	for _,v in pairs(game:GetService('Players'):GetChildren()) do
+		if StarId[v.UserId] then
+			if v.Character then
+				if v.Character.Parent.Name == 'Players' then
+					local humanoid = v.Character:FindFirstChildWhichIsA('Humanoid')
+					if humanoid then
+						if not humanoid.DisplayName:find("[⭐]") then
+							humanoid.DisplayName = ('[⭐]'..v.DisplayName)
+						end
+					end
+				end
+			end
+		elseif SkidId[v.UserId] then
+			if v.Character then
+				if v.Character.Parent.Name == 'Players' then
+					local humanoid = v.Character:FindFirstChildWhichIsA('Humanoid')
+					if humanoid then
+						if not humanoid.DisplayName:find("[💀SKID💀]") then
+							humanoid.DisplayName = ('[💀SKID💀]'..v.DisplayName)
+						end
+					end
+				end
+			end
+        elseif ThugId[v.UserId] then
+			if v.Character then
+				if v.Character.Parent.Name == 'Players' then
+					local humanoid = v.Character:FindFirstChildWhichIsA('Humanoid')
+					if humanoid then
+						if not humanoid.DisplayName:find("[😎THUGHUNTER😎]") then
+							humanoid.DisplayName = ('[😎THUGHUNTER😎]'..v.DisplayName)
+						end
+					end
+				end
+			end
+	elseif EgoId[v.UserId] then
+			if v.Character then
+				if v.Character.Parent.Name == 'Players' then
+					local humanoid = v.Character:FindFirstChildWhichIsA('Humanoid')
+					if humanoid then
+						if not humanoid.DisplayName:find("[🔥child molester🔥]") then
+							humanoid.DisplayName = ('[🔥child molester🔥]'..v.DisplayName)
+						end
+					end
+				end
+			end
+        elseif fedId[v.UserId] then
+			if v.Character then
+				if v.Character.Parent.Name == 'Players' then
+					local humanoid = v.Character:FindFirstChildWhichIsA('Humanoid')
+					if humanoid then
+						if not humanoid.DisplayName:find("[⚧fed⚧]") then
+							humanoid.DisplayName = ('[⚧fed⚧]'..v.DisplayName)
+						end
+					end
+				end
+			end
+		elseif OwnerId[v.UserId] then
+			if v.Character then
+				if v.Character.Parent.Name == 'Players' then
+					local humanoid = v.Character:FindFirstChildWhichIsA('Humanoid')
+					if humanoid then
+						if not humanoid.DisplayName:find("[👑]") then
+							humanoid.DisplayName = ('[👑]'..v.DisplayName)
+						end
+					end
+				end
+			end
+		elseif EnemyId[v.UserId] then
+			if v.Character then
+				if v.Character.Parent.Name == 'Players' then
+					local humanoid = v.Character:FindFirstChildWhichIsA('Humanoid')
+					if humanoid then
+						if not humanoid.DisplayName:find("🤡 RAYX Premium User 🤡") then
+							humanoid.DisplayName = ('🤡 RAYX Premium User 🤡')
+						end
+					end
+				end
+			end
+		elseif v.Character then
+			if v.Character.Parent.Name == 'Players' then
+				local humanoid = v.Character:FindFirstChildWhichIsA('Humanoid')
+				if humanoid then
+					if not humanoid.DisplayName:find("[😎]") then
+						humanoid.DisplayName = ('[😎]'..v.DisplayName)
+					end
+				end
+			end
+		end
+	end
 end
 
-game.Players.PlayerAdded:Connect(function(player)
-    updateDisplayName(player)
-end)
-
-game.Players.PlayerRemoving:Connect(function(player)
-    -- Очистить дисплей ника перед удалением игрока
-    local character = player.Character
-    if character and character.Parent.Name == 'Players' then
-        local humanoid = character:FindFirstChildWhichIsA('Humanoid')
-        if humanoid then
-            humanoid.DisplayName = player.DisplayName
-        end
-    end
-end)
-
--- Вернуть таблицу StarId
-return StarId
+local success,err = pcall(premium)
