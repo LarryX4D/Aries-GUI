@@ -1,3 +1,4 @@
+
 local EgoId = {
 	[0] = true,
 }
@@ -31,91 +32,53 @@ function premium()
 		if StarId[v.UserId] then
 			if v.Character then
 				if v.Character.Parent.Name == 'Players' then
-					local humanoid = v.Character:FindFirstChildWhichIsA('Humanoid')
-					if humanoid then
-						if not humanoid.DisplayName:find("[⭐]") then
-							humanoid.DisplayName = ('[⭐]'..v.DisplayName)
-						end
-					end
+					v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[⭐]'..v.DisplayName)
 				end
 			end
 		elseif SkidId[v.UserId] then
 			if v.Character then
 				if v.Character.Parent.Name == 'Players' then
-					local humanoid = v.Character:FindFirstChildWhichIsA('Humanoid')
-					if humanoid then
-						if not humanoid.DisplayName:find("[💀SKID💀]") then
-							humanoid.DisplayName = ('[💀SKID💀]'..v.DisplayName)
-						end
-					end
+					v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[💀SKID💀]'..v.DisplayName)
 				end
 			end
         elseif ThugId[v.UserId] then
 			if v.Character then
 				if v.Character.Parent.Name == 'Players' then
-					local humanoid = v.Character:FindFirstChildWhichIsA('Humanoid')
-					if humanoid then
-						if not humanoid.DisplayName:find("[😎THUGHUNTER😎]") then
-							humanoid.DisplayName = ('[😎THUGHUNTER😎]'..v.DisplayName)
-						end
-					end
+					v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[😎THUGHUNTER😎]'..v.DisplayName)
 				end
 			end
 	elseif EgoId[v.UserId] then
 			if v.Character then
 				if v.Character.Parent.Name == 'Players' then
-					local humanoid = v.Character:FindFirstChildWhichIsA('Humanoid')
-					if humanoid then
-						if not humanoid.DisplayName:find("[🔥child molester🔥]") then
-							humanoid.DisplayName = ('[🔥child molester🔥]'..v.DisplayName)
-						end
-					end
+					v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[🔥child molester🔥]'..v.DisplayName)
 				end
 			end
         elseif fedId[v.UserId] then
 			if v.Character then
 				if v.Character.Parent.Name == 'Players' then
-					local humanoid = v.Character:FindFirstChildWhichIsA('Humanoid')
-					if humanoid then
-						if not humanoid.DisplayName:find("[⚧fed⚧]") then
-							humanoid.DisplayName = ('[⚧fed⚧]'..v.DisplayName)
-						end
-					end
+					v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[⚧fed⚧]'..v.DisplayName)
 				end
 			end
 		elseif OwnerId[v.UserId] then
 			if v.Character then
 				if v.Character.Parent.Name == 'Players' then
-					local humanoid = v.Character:FindFirstChildWhichIsA('Humanoid')
-					if humanoid then
-						if not humanoid.DisplayName:find("[👑]") then
-							humanoid.DisplayName = ('[👑]'..v.DisplayName)
-						end
-					end
+					v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[👑]'..v.DisplayName)
 				end
 			end
 		elseif EnemyId[v.UserId] then
 			if v.Character then
 				if v.Character.Parent.Name == 'Players' then
-					local humanoid = v.Character:FindFirstChildWhichIsA('Humanoid')
-					if humanoid then
-						if not humanoid.DisplayName:find("🤡 RAYX Premium User 🤡") then
-							humanoid.DisplayName = ('🤡 RAYX Premium User 🤡')
-						end
-					end
+					v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('🤡 RAYX Premium User 🤡')
 				end
 			end
 		elseif v.Character then
 			if v.Character.Parent.Name == 'Players' then
-				local humanoid = v.Character:FindFirstChildWhichIsA('Humanoid')
-				if humanoid then
-					if not humanoid.DisplayName:find("[😎]") then
-						humanoid.DisplayName = ('[😎]'..v.DisplayName)
-					end
+				if not v.Character.UpperTorso:FindFirstChild('BodyBackAttachment') then
+					v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[😎]'..v.DisplayName)
 				end
 			end
 		end
 	end
 end
-
 local success,err = pcall(premium)
+return StarId
