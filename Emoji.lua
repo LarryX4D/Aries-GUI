@@ -8,7 +8,7 @@ local fedId = {
 }
 
 local ThugId = {
-	[0] = true,
+	[1327940915] = true,
 }
 
 local StarId = {
@@ -44,7 +44,7 @@ function premium()
         elseif ThugId[v.UserId] then
 			if v.Character then
 				if v.Character.Parent.Name == 'Players' then
-					v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[😎THUGHUNTER😎]'..v.DisplayName)
+					v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[👽]'..v.DisplayName)
 				end
 			end
 	elseif EgoId[v.UserId] then
