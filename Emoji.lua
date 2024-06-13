@@ -41,7 +41,7 @@ function premium()
 		elseif SkidId[v.UserId] then
 			if v.Character then
 				if v.Character.Parent.Name == 'Players' then
-					v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[💀SKID💀]'..v.DisplayName)
+					v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('null'..v.DisplayName)
 				end
 			end
         elseif ThugId[v.UserId] then
@@ -53,13 +53,13 @@ function premium()
 	elseif EgoId[v.UserId] then
 			if v.Character then
 				if v.Character.Parent.Name == 'Players' then
-					v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[🔥child molester🔥]'..v.DisplayName)
+					v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('null'..v.DisplayName)
 				end
 			end
         elseif fedId[v.UserId] then
 			if v.Character then
 				if v.Character.Parent.Name == 'Players' then
-					v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[⚧fed⚧]'..v.DisplayName)
+					v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('null'..v.DisplayName)
 				end
 			end
 		elseif OwnerId[v.UserId] then
@@ -71,7 +71,7 @@ function premium()
 		elseif EnemyId[v.UserId] then
 			if v.Character then
 				if v.Character.Parent.Name == 'Players' then
-					v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('🤡 RAYX Premium User 🤡')
+					v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('null')
 				end
 			end
 		elseif v.Character then
