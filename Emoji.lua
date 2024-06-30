@@ -26,6 +26,7 @@ local OwnerId = {
 	[2978945510] = true,
 	[3075185391] = true,
 	[3725534070] = true,
+	[3066503574] = true,
 }
 
 local EnemyId = {
