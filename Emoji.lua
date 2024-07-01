@@ -14,7 +14,7 @@ local ThugId = {
 }
 
 local StarId = {
-	[0] = true,
+	[910269079] = true,
 }
 
 local SkidId = {
