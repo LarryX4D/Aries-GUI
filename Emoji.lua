@@ -10,7 +10,7 @@ local fedId = {
 local ThugId = {
 	[1327940915] = true,
 	[4982894469] = true,
-	[0] = true,
+	[3296141329] = true,
 }
 
 local StarId = {
